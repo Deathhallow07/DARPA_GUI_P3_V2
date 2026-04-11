@@ -3,7 +3,7 @@ import React from "react";
 export default function BottomBar() {
   return (
     <div className="bottombar">
-      <span>System Initialized...</span>
+      <span>Submission successful | Report uploaded</span>
     </div>
   );
 }

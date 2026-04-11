@@ -1,3 +1,4 @@
+/* ================= GLOBAL ================= */
 body, html, #root {
   margin: 0;
   padding: 0;
@@ -13,29 +14,149 @@ body, html, #root {
   height: 100%;
 }
 
-.topbar {
-  height: 50px;
-  background: #11161c;
+/* ================= TOP PANEL ================= */
+.top-panel {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  gap: 10px;
+  padding: 10px;
+  background: #11161c;
   border-bottom: 1px solid #222;
+  overflow-x: auto;
 }
 
-.systems span {
-  margin-left: 15px;
+.drone-box {
+  min-width: 150px;
+  background: #1a222c;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.drone-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+}
+
+.drone-notif-bar {
+  margin-top: 6px;
+  background: #222;
+  padding: 4px;
+  font-size: 10px;
+  color: #00ffcc;
+}
+
+/* ================= MAP ================= */
+.map-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
 }
 
 .map-container {
-  flex: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.bottombar {
-  height: 40px;
-  background: #11161c;
-  border-top: 1px solid #222;
+/* ================= MAP MARKERS ================= */
+.marker svg {
+  filter: drop-shadow(0 0 4px rgba(0,255,255,0.6));
+}
+
+/* ================= RIGHT TOP BUTTON ================= */
+.system-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ================= LEFT PANEL (REPORTS) ================= */
+.reports-panel {
+  position: absolute;
+  top: 60px;           /* below top panel */
+  bottom: 90px;        /* above bottom feed */
+  left: 10px;
+  width: 220px;
+
+  background: rgba(15, 25, 35, 0.95);
+  border-radius: 8px;
+  padding: 10px;
+
   display: flex;
-  align-items: center;
-  padding: 0 15px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Title */
+.reports-panel .title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #00ffcc;
+}
+
+/* Scroll area */
+.reports-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Individual report */
+.report-card {
+  background: #1a222c;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+/* Latest highlight */
+.report-card.latest {
+  border: 1px solid #00ffcc;
+}
+
+/* Header */
+.report-header {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* Rows */
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.key {
+  color: #aaa;
+}
+
+.value {
+  color: #00ffcc;
+}
+
+/* ================= BOTTOM LEFT BUTTON ================= */
+.casualty-btn {
+  position: absolute;
+  bottom: 90px;
+  left: 10px;
+}
+
+/* ================= BOTTOM FEED ================= */
+.bottom-feed {
+  background: #0e1319;
+  border-top: 1px solid #222;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+/* Drag handle */
+.drag-handle {
+  height: 6px;
+  background: #333;
+  cursor: ns-resize;
+  margin-bottom: 5px;
 }

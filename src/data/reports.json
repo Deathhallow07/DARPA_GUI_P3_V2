@@ -1,0 +1,18 @@
+[
+  {
+    "id": "R-101",
+    "status": "Active",
+    "priority": "High",
+    "casualties": 2,
+    "drones_active": 1,
+    "timestamp": "2 min ago"
+  },
+  {
+    "id": "R-100",
+    "status": "Resolved",
+    "priority": "Medium",
+    "casualties": 1,
+    "drones_active": 2,
+    "timestamp": "10 min ago"
+  }
+]

@@ -1,10 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import casualties from "../data/casualties.json";
 import drones from "../data/drones.json";
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYXl1c2gxMDIiLCJhIjoiY2xycTRtZW4xMDE0cTJtbno5dnU0dG12eCJ9.L9xmYztXX2yOahZoKDBr6g";
+
+function createSVGMarker(svgString) {
+  const el = document.createElement("div");
+  el.className = "marker";
+  el.innerHTML = svgString;
+  return new mapboxgl.Marker(el);
+}
+
+const droneSVG = `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="cyan" stroke-width="1.5"><circle cx="12" cy="12" r="3" /><line x1="2" y1="12" x2="9" y2="12" /><line x1="15" y1="12" x2="22" y2="12" /><line x1="12" y1="2" x2="12" y2="9" /><line x1="12" y1="15" x2="12" y2="22" /></svg>`;
+const roverSVG = `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orange" stroke-width="1.5"><rect x="4" y="10" width="16" height="6" /><circle cx="7" cy="18" r="2" fill="orange" /><circle cx="17" cy="18" r="2" fill="orange" /></svg>`;
+const casualtySVG = `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="1.5"><circle cx="12" cy="8" r="3" /><line x1="12" y1="11" x2="12" y2="20" /><line x1="8" y1="14" x2="16" y2="14" /></svg>`;
 
 export default function MapView() {
   const mapContainer = useRef(null);
@@ -21,22 +31,32 @@ export default function MapView() {
     });
 
     map.current.on("load", () => {
-      // Casualties
       casualties.forEach((c) => {
-        new mapboxgl.Marker({ color: "red" })
+        createSVGMarker(casualtySVG)
           .setLngLat([c.lng, c.lat])
-          .setPopup(new mapboxgl.Popup().setText(`Casualty: ${c.id}`))
           .addTo(map.current);
       });
 
-      // Drones / Rovers
       drones.forEach((d) => {
-        new mapboxgl.Marker({ color: "cyan" })
+        const svg = d.type === "Drone" ? droneSVG : roverSVG;
+        createSVGMarker(svg)
           .setLngLat([d.lng, d.lat])
-          .setPopup(new mapboxgl.Popup().setText(`${d.type}: ${d.id}`))
           .addTo(map.current);
       });
     });
+  }, []);
+
+  // resize observer
+  useEffect(() => {
+    if (!map.current) return;
+
+    const ro = new ResizeObserver(() => {
+      map.current.resize();
+    });
+
+    if (mapContainer.current) ro.observe(mapContainer.current);
+
+    return () => ro.disconnect();
   }, []);
 
   return <div ref={mapContainer} className="map-container" />;

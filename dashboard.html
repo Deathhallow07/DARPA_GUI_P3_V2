@@ -67,7 +67,7 @@
     </div>
 
     <script>
-        // Your Mapbox Access Token
+       
         mapboxgl.accessToken = 'pk.eyJ1IjoiYXl1c2gxMDIiLCJhIjoiY2xycTRtZW4xMDE0cTJtbno5dnU0dG12eCJ9.L9xmYztXX2yOahZoKDBr6g';
 
         let map;
@@ -77,29 +77,29 @@
             const name = localStorage.getItem('gcs_selected_system') || 'UAV 1';
             document.getElementById('sys-name').innerText = name + " DASHBOARD";
             
-            // Initialize Mapbox with a Dark Navigation Style
+            
             map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/navigation-night-v1',
-                center: [78.46, 17.40], // Default center (Hyderabad area)
+                center: [78.46, 17.40], 
                 zoom: 14,
-                pitch: 45 // Adds a 3D perspective
+                pitch: 45 
             });
 
             map.addControl(new mapboxgl.NavigationControl());
 
-            // Add a Marker representing the Drone
+            
             droneMarker = new mapboxgl.Marker({ color: '#0ea5e9' })
                 .setLngLat([78.46, 17.40])
                 .addTo(map);
 
-            // Simulate Live Data Updates
+            
             setInterval(() => {
                 document.getElementById('val-alt').innerText = (120 + Math.random() * 5).toFixed(1);
                 document.getElementById('val-spd').innerText = (15 + Math.random()).toFixed(1);
                 document.getElementById('val-hdg').innerText = Math.floor(Math.random() * 360);
                 
-                // Slowly move the marker to simulate flight
+                
                 const currentPos = droneMarker.getLngLat();
                 droneMarker.setLngLat([
                     currentPos.lng + (Math.random() - 0.5) * 0.0001,

@@ -28,12 +28,12 @@ body {
     flex-direction: column;
 }
 
-/* Typography & Utilities */
+
 h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
 .text-accent { color: var(--accent-blue); text-shadow: var(--accent-glow); }
 .text-muted { color: var(--text-secondary); font-size: 0.85rem; }
 
-/* Buttons */
+
 .btn {
     background: transparent;
     border: 1px solid var(--border-hover);
@@ -51,7 +51,7 @@ h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
     box-shadow: var(--accent-glow);
 }
 
-/* Center Layouts (Index) */
+
 .center-screen {
     flex: 1;
     display: flex;
@@ -61,7 +61,7 @@ h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
     text-align: center;
 }
 
-/* Systems Grid */
+
 .container { padding: 2rem 4rem; width: 100%; max-width: 1400px; margin: 0 auto; }
 .header-bar { display: flex; align-items: center; margin-bottom: 2rem; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
 .back-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 1.2rem; }
@@ -93,7 +93,7 @@ h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
 .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
 .status-dot.online { background-color: var(--status-online); box-shadow: 0 0 5px var(--status-online); }
 
-/* Dashboard Layout */
+
 .dashboard-grid {
     display: grid;
     grid-template-columns: 300px 1fr 250px;
@@ -114,7 +114,7 @@ h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
 }
 .panel-title { font-size: 0.9rem; color: var(--accent-blue); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
 
-/* Telemetry Stats */
+
 .telemetry-item {
     background-color: var(--card-bg);
     padding: 1rem;
@@ -125,7 +125,7 @@ h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
 .telemetry-item .value { font-size: 1.5rem; font-weight: bold; font-family: 'Courier New', Courier, monospace;}
 .telemetry-item .unit { font-size: 0.8rem; color: var(--text-secondary); font-weight: normal; }
 
-/* Center Map & Video */
+
 .map-wrapper {
     flex: 1;
     border: 1px solid var(--border-color);

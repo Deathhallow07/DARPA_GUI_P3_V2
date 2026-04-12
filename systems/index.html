@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Command - Start</title>
+    <style>
+        :root { --bg: #070b14; --accent: #0ea5e9; --text: #f8fafc; }
+        body { 
+            background: var(--bg); color: var(--text); 
+            font-family: 'Segoe UI', sans-serif; margin: 0;
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; height: 100vh; text-align: center;
+        }
+        .btn {
+            background: transparent; border: 1px solid var(--accent);
+            color: var(--accent); padding: 15px 30px; font-weight: bold;
+            cursor: pointer; text-transform: uppercase; border-radius: 4px;
+            transition: 0.3s; font-size: 1.1rem;
+        }
+        .btn:hover { background: rgba(14, 165, 233, 0.1); box-shadow: 0 0 15px var(--accent); }
+        h1 { font-size: 3rem; letter-spacing: 5px; margin-bottom: 10px; }
+        .muted { color: #94a3b8; letter-spacing: 2px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <h1>GCS <span style="color:var(--accent)">COMMAND</span></h1>
+    <p class="muted">GROUND CONTROL INTERFACE V2.0</p>
+    <br><br>
+    <button class="btn" onclick="window.location.href='systems.html'">Open Control Panel</button>
+</body>
+</html>

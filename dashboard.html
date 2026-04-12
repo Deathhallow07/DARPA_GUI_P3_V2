@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS - Mission Dashboard</title>
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        :root { 
+            --bg: #070b14; --panel: #0f172a; --card: #162032; 
+            --accent: #0ea5e9; --border: #1e293b; --text: #f8fafc; 
+            --safe: #10b981; --danger: #ef4444; 
+        }
+        body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 15px; overflow: hidden; }
+        
+        .header { display: flex; justify-content: space-between; align-items: center; height: 60px; border-bottom: 1px solid var(--border); margin-bottom: 15px; }
+        .layout { display: grid; grid-template-columns: 280px 1fr 240px; gap: 15px; height: calc(100vh - 100px); }
+        .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 15px; display: flex; flex-direction: column; }
+        
+        .telemetry-item { background: var(--card); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid var(--accent); }
+        .telemetry-item small { color: #94a3b8; display: block; font-size: 0.7rem; text-transform: uppercase; }
+        .telemetry-item span { font-size: 1.4rem; font-weight: bold; font-family: monospace; }
+
+        #map { flex: 1; border-radius: 4px; border: 1px solid var(--border); background: #000; }
+
+        .btn-ctrl { background: var(--card); border: 1px solid var(--border); color: white; padding: 12px; margin-bottom: 8px; cursor: pointer; text-align: left; font-weight: bold; border-radius: 4px; transition: 0.2s; }
+        .btn-ctrl:hover { border-color: var(--accent); }
+        .btn-action { background: var(--accent); color: black; border: none; padding: 12px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        .status-msg { margin-top: auto; font-family: monospace; font-size: 0.8rem; color: #94a3b8; padding-top: 10px; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <h2 id="sys-name" style="margin:0; color:var(--accent);">SYSTEM</h2>
+            <small id="sys-id" style="color:#94a3b8;">LINK ACTIVE</small>
+        </div>
+        <button onclick="window.location.href='systems.html'" style="background:none; border:1px solid #333; color:white; cursor:pointer; padding:5px 15px;">DISCONNECT</button>
+    </div>
+
+    <div class="layout">
+        <div class="panel">
+            <h4 style="margin-top:0; color:var(--accent);">LIVE TELEMETRY</h4>
+            <div class="telemetry-item"><small>Altitude</small><span id="val-alt">120.5</span> m</div>
+            <div class="telemetry-item"><small>Ground Speed</small><span id="val-spd">15.2</span> m/s</div>
+            <div class="telemetry-item"><small>Battery</small><span id="val-bat">78</span> %</div>
+            <div class="telemetry-item"><small>Heading</small><span id="val-hdg">0</span>°</div>
+        </div>
+
+        <div class="panel" style="background:transparent; border:none; padding:0;">
+            <div id="map"></div>
+            <button class="btn-action" onclick="toggleCam()">ACCESS VIDEO FEED</button>
+        </div>
+
+        <div class="panel">
+            <h4 style="margin-top:0; color:var(--accent);">COMMANDS</h4>
+            <button id="arm-btn" class="btn-ctrl" style="border-left: 3px solid var(--safe);" onclick="toggleArm()">&#9881; ARM SYSTEM</button>
+            <button class="btn-ctrl" onclick="cmd('TAKEOFF INITIATED')">&#8593; TAKEOFF</button>
+            <button class="btn-ctrl" onclick="cmd('LANDING SEQUENCE...')">&#8595; LAND</button>
+            <button class="btn-ctrl" onclick="cmd('RETURNING TO HOME')">&#8634; RTL</button>
+            <div class="status-msg" id="log">SYSTEM READY</div>
+        </div>
+    </div>
+
+    <script>
+        // Your Mapbox Access Token
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYXl1c2gxMDIiLCJhIjoiY2xycTRtZW4xMDE0cTJtbno5dnU0dG12eCJ9.L9xmYztXX2yOahZoKDBr6g';
+
+        let map;
+        let droneMarker;
+
+        window.onload = () => {
+            const name = localStorage.getItem('gcs_selected_system') || 'UAV 1';
+            document.getElementById('sys-name').innerText = name + " DASHBOARD";
+            
+            // Initialize Mapbox with a Dark Navigation Style
+            map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/navigation-night-v1',
+                center: [78.46, 17.40], // Default center (Hyderabad area)
+                zoom: 14,
+                pitch: 45 // Adds a 3D perspective
+            });
+
+            map.addControl(new mapboxgl.NavigationControl());
+
+            // Add a Marker representing the Drone
+            droneMarker = new mapboxgl.Marker({ color: '#0ea5e9' })
+                .setLngLat([78.46, 17.40])
+                .addTo(map);
+
+            // Simulate Live Data Updates
+            setInterval(() => {
+                document.getElementById('val-alt').innerText = (120 + Math.random() * 5).toFixed(1);
+                document.getElementById('val-spd').innerText = (15 + Math.random()).toFixed(1);
+                document.getElementById('val-hdg').innerText = Math.floor(Math.random() * 360);
+                
+                // Slowly move the marker to simulate flight
+                const currentPos = droneMarker.getLngLat();
+                droneMarker.setLngLat([
+                    currentPos.lng + (Math.random() - 0.5) * 0.0001,
+                    currentPos.lat + (Math.random() - 0.5) * 0.0001
+                ]);
+            }, 2000);
+        };
+
+        function toggleArm() {
+            const btn = document.getElementById('arm-btn');
+            const isArmed = btn.innerText.includes("DISARM");
+            if (isArmed) {
+                btn.innerHTML = "&#9881; ARM SYSTEM";
+                btn.style.borderLeft = "3px solid var(--safe)";
+                btn.style.color = "white";
+                cmd("SYSTEM DISARMED");
+            } else {
+                btn.innerHTML = "&#10006; DISARM SYSTEM";
+                btn.style.borderLeft = "3px solid var(--danger)";
+                btn.style.color = "var(--danger)";
+                cmd("SYSTEM ARMED - MOTORS LIVE");
+            }
+        }
+
+        function cmd(text) {
+            const log = document.getElementById('log');
+            log.innerText = "STATUS: " + text;
+            log.style.color = text.includes("ARMED") ? "var(--danger)" : "var(--accent)";
+        }
+
+        function toggleCam() {
+            alert("Connecting to camera stream...");
+            cmd("CAMERA FEED ACTIVE");
+        }
+    </script>
+</body>
+</html>

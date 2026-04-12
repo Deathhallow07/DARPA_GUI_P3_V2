@@ -8,10 +8,12 @@ export default function TopDronePanel() {
       {drones.map((d) => (
         <div key={d.id} className="drone-box">
           <div className="drone-header">
-            {d.type === "Drone" ? <DroneIcon size={24} /> : <RoverIcon size={24} />} {d.id}
+            {d.type === "Drone" ? <DroneIcon size={20} /> : <RoverIcon size={20} />}
+            <span>{d.id}</span>
           </div>
-          <div>🔋 {d.battery}%</div>
-          <div>Mode: {d.mode}</div>
+          <div style={{ marginTop: 4, fontSize: 11, color: "#8a8070" }}>
+            {d.battery}% &nbsp;|&nbsp; {d.mode}
+          </div>
           <div className="drone-notif-bar">{d.notification}</div>
         </div>
       ))}

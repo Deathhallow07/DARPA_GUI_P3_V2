@@ -1,18 +1,66 @@
 [
   {
-    "id": "R-101",
-    "status": "Active",
-    "priority": "High",
-    "casualties": 2,
-    "drones_active": 1,
-    "timestamp": "2 min ago"
+    "casualty_id": 1,
+    "submitted": true,
+    "submittedAt": "T+00:02:04",
+    "confirmation": {
+      "run": "RUN-003",
+      "user": "Maulik J",
+      "clock": 124.0,
+      "report_id": "RPT-8821-A",
+      "report_timestamp": "2026-04-11T03:42:04Z",
+      "report_status": "accepted"
+    }
   },
   {
-    "id": "R-100",
-    "status": "Resolved",
-    "priority": "Medium",
-    "casualties": 1,
-    "drones_active": 2,
-    "timestamp": "10 min ago"
+    "casualty_id": 2,
+    "submitted": true,
+    "submittedAt": "T+00:03:34",
+    "confirmation": {
+      "run": "RUN-003",
+      "user": "Maulik J",
+      "clock": 214.0,
+      "report_id": "RPT-8822-B",
+      "report_timestamp": "2026-04-11T03:54:17Z",
+      "report_status": "accepted"
+    }
+  },
+  {
+    "casualty_id": 3,
+    "submitted": true,
+    "submittedAt": "T+00:06:01",
+    "confirmation": {
+      "run": "RUN-003",
+      "user": "Maulik J",
+      "clock": 361.0,
+      "report_id": "RPT-8823-C",
+      "report_timestamp": "2026-04-11T04:21:55Z",
+      "report_status": "accepted"
+    }
+  },
+  {
+    "casualty_id": 4,
+    "submitted": false,
+    "submittedAt": null,
+    "confirmation": null
+  },
+  {
+    "casualty_id": 5,
+    "submitted": false,
+    "submittedAt": null,
+    "confirmation": null
+  },
+  {
+    "casualty_id": 6,
+    "submitted": true,
+    "submittedAt": "T+00:13:08",
+    "confirmation": {
+      "run": "RUN-003",
+      "user": "Maulik J",
+      "clock": 788.0,
+      "report_id": "RPT-8826-F",
+      "report_timestamp": "2026-04-11T04:53:08Z",
+      "report_status": "accepted"
+    }
   }
 ]

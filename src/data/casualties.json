@@ -1,4 +1,74 @@
 [
-  { "id": "C1", "lat": 28.61, "lng": 77.20 },
-  { "id": "C2", "lat": 28.62, "lng": 77.22 }
+  {
+    "casualty_id": 1,
+    "photo": "cas1.jpg",
+    "timeDetected": 124,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6300,
+      "longitude": 77.2100,
+      "level": 1
+    }
+  },
+  {
+    "casualty_id": 2,
+    "photo": "cas2.png",
+    "timeDetected": 214,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6200,
+      "longitude": 77.2200,
+      "level": 1
+    }
+  },
+  {
+    "casualty_id": 3,
+    "photo": "cas3.png",
+    "timeDetected": 361,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6000,
+      "longitude": 77.1900,
+      "level": 1
+    }
+  },
+  {
+    "casualty_id": 4,
+    "photo": "cas4.png",
+    "timeDetected": 502,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6100,
+      "longitude": 77.2000,
+      "level": 2
+    }
+  },
+  {
+    "casualty_id": 5,
+    "photo": "cas5.png",
+    "timeDetected": 634,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6400,
+      "longitude": 77.2300,
+      "level": 1
+    }
+  },
+  {
+    "casualty_id": 6,
+    "photo": "cas6.jpg",
+    "timeDetected": 788,
+    "darpa": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6150,
+      "longitude": 77.2150,
+      "level": 1
+    }
+  }
 ]

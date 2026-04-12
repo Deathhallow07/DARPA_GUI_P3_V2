@@ -1,10 +1,41 @@
-/* ================= GLOBAL ================= */
+/* ═══════════════════════════════════════════
+   PALETTE — Clean Dark, Cool Neutral
+   Dark grey backgrounds, steel blue accents,
+   clear greens/ambers at moderate saturation.
+   Not neon, not warm, fully readable.
+═══════════════════════════════════════════ */
+
+:root {
+  --bg-base:      #111111;
+  --bg-surface:   #1a1a1a;
+  --bg-raised:    #222222;
+  --bg-header:    #0f0f0f;
+
+  --border:       #2a2a2a;
+  --border-light: #383838;
+
+  --text-pri:     #e2e0db;
+  --text-sec:     #707070;
+  --text-dim:     #3a3a3a;
+
+  --accent:       #5b8ab5;   /* steel blue — buttons, highlights */
+  --accent-dim:   #2e4a66;
+
+  --ok:           #5a9960;   /* medium green — accepted */
+  --warn:         #c8922a;   /* amber — pending */
+  --err:          #b85252;   /* muted red */
+  --info:         #5b8ab5;   /* steel blue — times, IDs */
+
+  --drone:        #5b8ab5;
+  --rover:        #c8922a;
+}
+
 body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #0b0f14;
-  color: #e0e0e0;
+  background: var(--bg-base);
+  color: var(--text-pri);
   font-family: monospace;
 }
 
@@ -14,22 +45,23 @@ body, html, #root {
   height: 100%;
 }
 
-/* ================= TOP PANEL ================= */
+/* ── Top drone panel ── */
 .top-panel {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   padding: 10px;
-  background: #11161c;
-  border-bottom: 1px solid #222;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
   overflow-x: auto;
 }
 
 .drone-box {
   min-width: 150px;
-  background: #1a222c;
+  background: var(--bg-surface);
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 12px;
+  border: 1px solid var(--border);
 }
 
 .drone-header {
@@ -37,17 +69,19 @@ body, html, #root {
   align-items: center;
   gap: 6px;
   font-weight: bold;
+  color: var(--text-pri);
 }
 
 .drone-notif-bar {
   margin-top: 6px;
-  background: #222;
+  background: var(--bg-raised);
   padding: 4px;
   font-size: 10px;
-  color: #00ffcc;
+  color: var(--accent);
+  border-radius: 2px;
 }
 
-/* ================= MAP ================= */
+/* ── Map ── */
 .map-wrapper {
   position: relative;
   flex: 1;
@@ -60,103 +94,120 @@ body, html, #root {
   height: 100%;
 }
 
-/* ================= MAP MARKERS ================= */
 .marker svg {
-  filter: drop-shadow(0 0 4px rgba(0,255,255,0.6));
+  filter: drop-shadow(0 0 3px rgba(91,138,181,0.35));
 }
 
-/* ================= RIGHT TOP BUTTON ================= */
+/* ── Buttons on map ── */
 .system-buttons {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-/* ================= LEFT PANEL (REPORTS) ================= */
-.reports-panel {
-  position: absolute;
-  top: 60px;           /* below top panel */
-  bottom: 90px;        /* above bottom feed */
-  left: 10px;
-  width: 220px;
-
-  background: rgba(15, 25, 35, 0.95);
-  border-radius: 8px;
-  padding: 10px;
-
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Title */
-.reports-panel .title {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #00ffcc;
-}
-
-/* Scroll area */
-.reports-list {
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 4px;
-}
-
-/* Individual report */
-.report-card {
-  background: #1a222c;
-  border-radius: 6px;
-  padding: 8px;
-  margin-bottom: 8px;
+.system-buttons button,
+.casualty-btn button {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-pri);
+  font-family: monospace;
   font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: border-color 0.15s, color 0.15s;
 }
 
-/* Latest highlight */
-.report-card.latest {
-  border: 1px solid #00ffcc;
+.system-buttons button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-/* Header */
-.report-header {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-/* Rows */
-.report-row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2px;
-}
-
-.key {
-  color: #aaa;
-}
-
-.value {
-  color: #00ffcc;
-}
-
-/* ================= BOTTOM LEFT BUTTON ================= */
 .casualty-btn {
   position: absolute;
   bottom: 90px;
   left: 10px;
 }
 
-/* ================= BOTTOM FEED ================= */
-.bottom-feed {
-  background: #0e1319;
-  border-top: 1px solid #222;
-  overflow-y: auto;
-  font-size: 12px;
+.casualty-btn button:hover {
+  border-color: var(--err);
+  color: #c07070;
 }
 
-/* Drag handle */
-.drag-handle {
-  height: 6px;
-  background: #333;
-  cursor: ns-resize;
+/* ── Reports panel ── */
+.reports-panel {
+  position: absolute;
+  top: 60px;
+  bottom: 90px;
+  left: 10px;
+  width: 220px;
+  background: rgba(15,15,15,0.96);
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.reports-panel .title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.reports-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.report-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.report-card.latest {
+  border-color: var(--accent-dim);
+}
+
+.report-header {
+  font-weight: bold;
   margin-bottom: 5px;
+  color: var(--text-pri);
+  font-size: 11px;
+}
+
+.report-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+
+.key   { color: var(--text-sec); }
+.value { color: var(--text-pri); }
+
+/* ── Bottom feed ── */
+.bottom-feed {
+  background: var(--bg-header);
+  border-top: 1px solid var(--border);
+  overflow-y: auto;
+  font-size: 11px;
+  color: var(--text-sec);
+  padding: 4px 10px;
+}
+
+.drag-handle {
+  height: 4px;
+  background: var(--border);
+  cursor: ns-resize;
+  margin-bottom: 4px;
+  border-radius: 2px;
 }

@@ -1,0 +1,652 @@
+[
+  {
+    "casualty_id": 1,
+    "photo": "cas1.jpg",
+    "timeDetected": 124,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6300,
+      "longitude": 77.2100,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage"
+    },
+
+    "gate3": {
+      "second_pass_category": 0,
+      "second_pass_label": "Urgent",
+      "trauma_head": null,
+      "trauma_torso_back": 1,
+      "trauma_torso_back_label": "Open",
+      "trauma_torso_front": null,
+      "trauma_leg_right": 0,
+      "trauma_leg_right_label": "Amputation",
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 1,
+      "alertness_verbal_label": "Abnormal",
+      "alertness_motor": 1,
+      "alertness_motor_label": "Abnormal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 112,
+      "rr": 24,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6300,
+      "longitude": 77.2100,
+      "level": 1,
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage",
+      "time_ago": 124
+    },
+
+    "report": {
+      "submitted": true,
+      "submittedAt": "T+00:02:04",
+      "confirmation": {
+        "run": "RUN-003",
+        "user": "Maulik J",
+        "clock": 124.0,
+        "report_id": "RPT-8821-A",
+        "report_timestamp": "2026-04-11T03:42:04Z",
+        "report_status": "accepted"
+      }
+    }
+  },
+
+  {
+    "casualty_id": 2,
+    "photo": "cas2.png",
+    "timeDetected": 214,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6200,
+      "longitude": 77.2200,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 1,
+      "category_label": "Urgent / Airway"
+    },
+
+    "gate3": {
+      "second_pass_category": 0,
+      "second_pass_label": "Urgent",
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": 1,
+      "trauma_torso_front_label": "Open",
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": 2,
+      "trauma_arm_left_label": "Closed",
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 0,
+      "alertness_verbal_label": "Normal",
+      "alertness_motor": 0,
+      "alertness_motor_label": "Normal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 98,
+      "rr": 28,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6200,
+      "longitude": 77.2200,
+      "level": 1,
+      "category": 1,
+      "category_label": "Urgent / Airway",
+      "time_ago": 214
+    },
+
+    "report": {
+      "submitted": true,
+      "submittedAt": "T+00:03:34",
+      "confirmation": {
+        "run": "RUN-003",
+        "user": "Maulik J",
+        "clock": 214.0,
+        "report_id": "RPT-8822-B",
+        "report_timestamp": "2026-04-11T03:54:17Z",
+        "report_status": "accepted"
+      }
+    }
+  },
+
+  {
+    "casualty_id": 3,
+    "photo": "cas3.png",
+    "timeDetected": 361,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6000,
+      "longitude": 77.1900,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 3,
+      "category_label": "Non-Urgent / Stationary"
+    },
+
+    "gate3": {
+      "second_pass_category": 1,
+      "second_pass_label": "Priority",
+      "trauma_head": 2,
+      "trauma_head_label": "Closed",
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": 3,
+      "trauma_leg_left_label": "Burn",
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 0,
+      "alertness_verbal_label": "Normal",
+      "alertness_motor": 0,
+      "alertness_motor_label": "Normal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 88,
+      "rr": 16,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6000,
+      "longitude": 77.1900,
+      "level": 1,
+      "category": 3,
+      "category_label": "Non-Urgent / Stationary",
+      "time_ago": 361
+    },
+
+    "report": {
+      "submitted": true,
+      "submittedAt": "T+00:06:01",
+      "confirmation": {
+        "run": "RUN-003",
+        "user": "Maulik J",
+        "clock": 361.0,
+        "report_id": "RPT-8823-C",
+        "report_timestamp": "2026-04-11T04:21:55Z",
+        "report_status": "accepted"
+      }
+    }
+  },
+
+  {
+    "casualty_id": 4,
+    "photo": "cas4.png",
+    "timeDetected": 502,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6100,
+      "longitude": 77.2000,
+      "level": 2
+    },
+
+    "gate2": {
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage"
+    },
+
+    "gate3": {
+      "second_pass_category": null,
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": null,
+      "alertness_verbal": null,
+      "alertness_motor": null,
+      "time_ago": null
+    },
+
+    "gate4": {
+      "hr": null,
+      "rr": null,
+      "time_ago": null
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6100,
+      "longitude": 77.2000,
+      "level": 2,
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage",
+      "time_ago": 502
+    },
+
+    "report": {
+      "submitted": false,
+      "submittedAt": null,
+      "confirmation": null
+    }
+  },
+
+  {
+    "casualty_id": 5,
+    "photo": "cas5.png",
+    "timeDetected": 634,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6400,
+      "longitude": 77.2300,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 4,
+      "category_label": "Deceased"
+    },
+
+    "gate3": {
+      "second_pass_category": null,
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 1,
+      "alertness_ocular_label": "Closed",
+      "alertness_verbal": 2,
+      "alertness_verbal_label": "Absent",
+      "alertness_motor": 2,
+      "alertness_motor_label": "Absent",
+      "time_ago": null
+    },
+
+    "gate4": {
+      "hr": null,
+      "rr": null,
+      "time_ago": null
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "---",
+      "latitude": 28.6400,
+      "longitude": 77.2300,
+      "level": 1,
+      "category": 4,
+      "category_label": "Deceased",
+      "time_ago": 634
+    },
+
+    "report": {
+      "submitted": false,
+      "submittedAt": null,
+      "confirmation": null
+    }
+  },
+
+  {
+    "casualty_id": 6,
+    "photo": "cas6.jpg",
+    "timeDetected": 788,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6150,
+      "longitude": 77.2150,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 2,
+      "category_label": "Non-Urgent / Ambulatory"
+    },
+
+    "gate3": {
+      "second_pass_category": 2,
+      "second_pass_label": "Routine",
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": 1,
+      "trauma_arm_right_label": "Open",
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 0,
+      "alertness_verbal_label": "Normal",
+      "alertness_motor": 0,
+      "alertness_motor_label": "Normal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 76,
+      "rr": 14,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6150,
+      "longitude": 77.2150,
+      "level": 1,
+      "category": 2,
+      "category_label": "Non-Urgent / Ambulatory",
+      "time_ago": 788
+    },
+
+    "report": {
+      "submitted": true,
+      "submittedAt": "T+00:13:08",
+      "confirmation": {
+        "run": "RUN-003",
+        "user": "Maulik J",
+        "clock": 788.0,
+        "report_id": "RPT-8826-F",
+        "report_timestamp": "2026-04-11T04:53:08Z",
+        "report_status": "accepted"
+      }
+    }
+  },
+
+  {
+    "casualty_id": 7,
+    "photo": null,
+    "timeDetected": 910,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6250,
+      "longitude": 77.2050,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage"
+    },
+
+    "gate3": {
+      "second_pass_category": 0,
+      "second_pass_label": "Urgent",
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": 0,
+      "trauma_torso_front_label": "Amputation",
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 1,
+      "alertness_verbal_label": "Abnormal",
+      "alertness_motor": 1,
+      "alertness_motor_label": "Abnormal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 134,
+      "rr": 30,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6250,
+      "longitude": 77.2050,
+      "level": 1,
+      "category": 0,
+      "category_label": "Urgent / Hemorrhage",
+      "time_ago": 910
+    },
+
+    "report": {
+      "submitted": true,
+      "submittedAt": "T+00:15:10",
+      "confirmation": {
+        "run": "RUN-003",
+        "user": "Maulik J",
+        "clock": 910.0,
+        "report_id": "RPT-8827-G",
+        "report_timestamp": "2026-04-11T05:05:10Z",
+        "report_status": "accepted"
+      }
+    }
+  },
+
+  {
+    "casualty_id": 8,
+    "photo": null,
+    "timeDetected": 1042,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6050,
+      "longitude": 77.2250,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 3,
+      "category_label": "Non-Urgent / Stationary"
+    },
+
+    "gate3": {
+      "second_pass_category": 1,
+      "second_pass_label": "Priority",
+      "trauma_head": null,
+      "trauma_torso_back": 3,
+      "trauma_torso_back_label": "Burn",
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 0,
+      "alertness_verbal_label": "Normal",
+      "alertness_motor": 1,
+      "alertness_motor_label": "Abnormal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 92,
+      "rr": 18,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6050,
+      "longitude": 77.2250,
+      "level": 1,
+      "category": 3,
+      "category_label": "Non-Urgent / Stationary",
+      "time_ago": 1042
+    },
+
+    "report": {
+      "submitted": false,
+      "submittedAt": null,
+      "confirmation": null
+    }
+  },
+
+  {
+    "casualty_id": 9,
+    "photo": null,
+    "timeDetected": 1188,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6350,
+      "longitude": 77.1950,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 1,
+      "category_label": "Urgent / Airway"
+    },
+
+    "gate3": {
+      "second_pass_category": 0,
+      "second_pass_label": "Urgent",
+      "trauma_head": 1,
+      "trauma_head_label": "Open",
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": null,
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 2,
+      "alertness_ocular_label": "Not Testable",
+      "alertness_verbal": 3,
+      "alertness_verbal_label": "Not Testable",
+      "alertness_motor": 3,
+      "alertness_motor_label": "Not Testable",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 140,
+      "rr": 6,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "D1",
+      "latitude": 28.6350,
+      "longitude": 77.1950,
+      "level": 1,
+      "category": 1,
+      "category_label": "Urgent / Airway",
+      "time_ago": 1188
+    },
+
+    "report": {
+      "submitted": false,
+      "submittedAt": null,
+      "confirmation": null
+    }
+  },
+
+  {
+    "casualty_id": 10,
+    "photo": null,
+    "timeDetected": 1320,
+
+    "gate1": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6180,
+      "longitude": 77.2280,
+      "level": 1
+    },
+
+    "gate2": {
+      "category": 2,
+      "category_label": "Non-Urgent / Ambulatory"
+    },
+
+    "gate3": {
+      "second_pass_category": 2,
+      "second_pass_label": "Routine",
+      "trauma_head": null,
+      "trauma_torso_back": null,
+      "trauma_torso_front": null,
+      "trauma_leg_right": 2,
+      "trauma_leg_right_label": "Closed",
+      "trauma_leg_left": null,
+      "trauma_arm_right": null,
+      "trauma_arm_left": null,
+      "alertness_ocular": 0,
+      "alertness_ocular_label": "Open",
+      "alertness_verbal": 0,
+      "alertness_verbal_label": "Normal",
+      "alertness_motor": 0,
+      "alertness_motor_label": "Normal",
+      "time_ago": 0
+    },
+
+    "gate4": {
+      "hr": 72,
+      "rr": 15,
+      "time_ago": 0
+    },
+
+    "hmt": {
+      "team": "DTU_TEAM",
+      "system": "R1",
+      "latitude": 28.6180,
+      "longitude": 77.2280,
+      "level": 1,
+      "category": 2,
+      "category_label": "Non-Urgent / Ambulatory",
+      "time_ago": 1320
+    },
+
+    "report": {
+      "submitted": false,
+      "submittedAt": null,
+      "confirmation": null
+    }
+  }
+]

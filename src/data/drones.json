@@ -6,15 +6,7 @@
     "lng": 77.21,
     "battery": 78,
     "mode": "AUTO",
-    "notification": "Scanning area"
-  },
-  {
-    "id": "R1",
-    "type": "Rover",
-    "lat": 28.60,
-    "lng": 77.19,
-    "battery": 55,
-    "mode": "MANUAL",
-    "notification": "Obstacle detected"
+    "notification": "Scanning area",
+    "casualities detected": 0
   }
 ]
